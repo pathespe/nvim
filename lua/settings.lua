@@ -15,6 +15,7 @@ vim.o.ignorecase = true
 vim.o.inccommand = "split"
 -- vim.o.lazyredraw = true (disabled as problematic with Noice plugin)
 vim.o.number = true
+vim.opt.relativenumber = true
 vim.o.scrolloff = 5
 vim.o.shiftwidth = 2
 -- vim.o.shortmess = vim.o.shortmess .. "c" -- .. is equivalent to += in vimscript
@@ -64,9 +65,9 @@ vim.cmd("packadd cfilter")
 --
 -- NOTE: Noice plugin will override these settings.
 vim.lsp.handlers["textDocument/hover"] =
-vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+    vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 vim.lsp.handlers["textDocument/signatureHelp"] =
-vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+    vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 vim.diagnostic.config({ float = { border = "rounded", style = "minimal" } })
 
 -- Configure the UI aspect of the quickfix window
